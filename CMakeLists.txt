@@ -22,8 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
         tf2_geometry_msgs)
 
 ### Intel Threading Building Blocks ###
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(TBB REQUIRED tbb)
+find_package(TBB REQUIRED tbb)
 
 ### Boost ###
 find_package(Boost REQUIRED)
@@ -138,7 +137,7 @@ target_link_libraries(
         ${PROJECT_NAME}
         ${Boost_LIBRARIES}
         ${PCL_COMMON_LIBRARIES}
-        ${TBB_LIBRARIES}
+        ${TBB_IMPORTED_TARGETS}
         ${catkin_LIBRARIES}
 )
 add_dependencies(
